@@ -1,9 +1,8 @@
 function getUserChoice(userInput) {
-    let userChoice = userInput.toLowerCase();
-      if (userChoice === "rock" || userChoice === "paper" || userChoice === "scissors") {
+     let userChoice = userInput.toLowerCase();
+      if (userChoice === 'rock' || userChoice === 'paper' || userChoice === 'scissors') {
         return userInput;
       }
-    console.log(userInput)
   }
 
 function getComputerChoice() {
@@ -17,15 +16,14 @@ function getComputerChoice() {
         else if(computerChoice === 2) {
         return "scissors";
         }
-        console.log(computerChoice)
 }
 
+const playerSelection = getUserChoice 
+const computerSelection = getComputerChoice
+
 function playRound(playerSelection, computerSelection){
-    let userChoice = userInput;
-    let computerChoice = getComputerChoice();
-   console.log('getComputerChoice:' + computerChoice);
     if (userChoice === computerChoice) {
-        return draw;
+        return ('Draw');
     }
     else if (userChoice === 'scissors' && computerChoice === 'paper') {
         return ('Scissors cut paper.' + playerWinRound);
@@ -45,10 +43,8 @@ function playRound(playerSelection, computerSelection){
         else if (computerChoice === 'paper') {
             return ('Paper covers rock.'  + computerWinRound);
         }
-            else {
-                return "That's not right!";
-            }
 }
+
 
  function game() {
   let (round = playRound);
@@ -58,7 +54,5 @@ function playRound(playerSelection, computerSelection){
   }
 }
 
-const playerSelection = getUserChoice
-const computerSelection = getComputerChoice
 
 
