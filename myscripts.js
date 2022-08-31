@@ -4,9 +4,10 @@ let playerChoice ;
 let computerChoice ;
 
 function getPlayerChoice(userInput) {
+    console.log ("Do you choose Rock, Paper, or Scissors?")
     const playerChoice = prompt(userInput).toLowerCase();
       if (playerChoice === 'rock' || playerChoice === 'paper' || playerChoice === 'scissors') {
-        return userInput;
+        return playerChoice;
       }
   }
 
@@ -45,17 +46,19 @@ function playRound(playerSelection, computerSelection){
         }
 }
 
-/*
+
 const playerSelection = getPlayerChoice();
 const computerSelection = getComputerChoice();
-console.log(playRound(playerSelection, computerSelection));
-*/
+
 
 function game() {
-  for (let i = 0; i < 5; i++) ; {
-    const playerSelection = getPlayerChoice();
-    const computerSelection = getComputerChoice();
-    console.log(playRound(playerSelection, computerSelection))
-  }
+    for  (i = 0; i < 5; i++) ; {
+    if ((i > 0 && i != 0) || ( i = 5 && i < 5) ) {
+    console.log(playRound(playerSelection, computerSelection));
+    }
+        else if (i > 5) {
+            return "Error";
+        }
+    }
 }
-
+console.log(game()) 
