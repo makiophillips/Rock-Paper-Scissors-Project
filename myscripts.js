@@ -4,7 +4,6 @@ let playerChoice ;
 let computerChoice ;
 
 function getPlayerChoice(userInput) {
-    console.log ("Do you choose Rock, Paper, or Scissors?")
     const playerChoice = prompt(userInput).toLowerCase();
       if (playerChoice === 'rock' || playerChoice === 'paper' || playerChoice === 'scissors') {
         return playerChoice;
@@ -45,20 +44,15 @@ function playRound(playerSelection, computerSelection){
             return ('You lose! ' + computerSelection + ' beats ' + playerSelection)
         }
 }
-
-
+console.log ("Do you choose Rock, Paper, or Scissors?");
 const playerSelection = getPlayerChoice();
 const computerSelection = getComputerChoice();
 
 
+
 function game() {
-    for  (i = 0; i < 5; i++) ; {
-    if ((i > 0 && i != 0) || ( i = 5 && i < 5) ) {
+    for (let i = 0; i < 5; i++) {
     console.log(playRound(playerSelection, computerSelection));
-    }
-        else if (i > 5) {
-            return "Error";
-        }
-    }
 }
-console.log(game()) 
+}
+console.log(game());
