@@ -45,16 +45,17 @@ function playRound(playerSelection, computerSelection){
         }
 }
 
-const playerSelection = 'rock';
+/*
+const playerSelection = getPlayerChoice();
 const computerSelection = getComputerChoice();
 console.log(playRound(playerSelection, computerSelection));
-
+*/
 
 function game() {
-  let i = playRound;
   for (let i = 0; i < 5; i++) ; {
-    if ((i > 0) && (i != 0) && (i <= 5));
-    return ("Round" + i)
+    const playerSelection = getPlayerChoice();
+    const computerSelection = getComputerChoice();
+    console.log(playRound(playerSelection, computerSelection))
   }
 }
 
