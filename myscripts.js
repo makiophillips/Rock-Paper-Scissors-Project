@@ -44,7 +44,7 @@ function playRound(playerSelection, computerSelection){
             return ('You lose! ' + computerSelection + ' beats ' + playerSelection)
         }
 }
-console.log ("Do you choose Rock, Paper, or Scissors?");
+
 const playerSelection = getPlayerChoice();
 const computerSelection = getComputerChoice();
 
