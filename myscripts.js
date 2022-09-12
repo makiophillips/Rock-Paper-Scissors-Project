@@ -2,7 +2,7 @@ const playerWinRound = ("Player wins!");
 const computerWinRound= ("Computer wins!");
 let playerChoice ;
 let computerChoice ;
-let winner = [];
+let winners = [];
 
 function gameOver() {
 	//promts button to restart game.
@@ -23,8 +23,16 @@ function gameStart() {
 	);
 }
 
-function playRound();
-	
+function playRound(playerChoice); {
+	let wins = checkWins();
+	if(wins >= 5) {
+		return
+	}
+	const computerSelection = getComputerChoice();
+	const winner = checkWinner(playerSelection, computerSelection);
+	winners.push(winner);
+	winTotal();
+}
 
 function getComputerChoice() {
 	const computerChoice = Math.floor(Math.random()*3)
@@ -39,27 +47,26 @@ function getComputerChoice() {
 		}
 }
 
-
-
-function playRound(playerSelection, computerSelection){
-	if (playerSelection === computerSelection) {
-		return ('Draw');
-	}
-	if (playerSelection === 'scissors' && computerSelection === 'paper') {
-		return ('Scissors cut paper. '  + playerWinRound);
-	}
-	if (playerSelection === 'paper' && computerSelection === 'rock') {
-		return ('Paper covers Rock. '  + playerWinRound); 
-	}
-	if (playerSelection === 'rock' && computerSelection === 'scissors') {
-		return ('Rock breaks scissors. ' + playerWinRound);
-	}
-		else {
-		return ('You lose! ' + computerSelection + ' beats ' + playerSelection)
-		}
+function checkWins() {
+	const playerWins = winners.filter((item) => item == "Player").length;
+	const computerWins = winners.filter((item) => item == "Computer").length;
+	return Math.max(playerWins, computerWins);
 }
 
-const playerSelection = getPlayerChoice();
+function checkWinner(playerChoice, computerChoice){
+	if (
+		(playerChoice == "rock" && computerChoice == "scissors") || 
+		(playerChoice == "paper" && computerChoice == "rock") || 
+		(playerChoice == "scissors" && computerChoice == "paper") 
+	) {
+		return "Player";
+	}	else if(playerChoice == computerChoice) {
+		return "Tie";
+	}	else {
+		return "Computer";
+	}
+}
+
 
 
 
