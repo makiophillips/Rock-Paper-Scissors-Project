@@ -50,9 +50,3 @@ const computerSelection = getComputerChoice();
 
 
 
-function game() {
-    for (let i = 0; i < 5; i++) {
-    console.log(playRound(playerSelection, computerSelection));
-}
-}
-console.log(game());
