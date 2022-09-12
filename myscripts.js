@@ -4,7 +4,7 @@ let playerChoice ;
 let computerChoice ;
 
 function getPlayerChoice(userInput) {
-    const playerChoice = prompt(userInput).toLowerCase();
+    const playerChoice = userInput.toLowerCase();
       if (playerChoice === 'rock' || playerChoice === 'paper' || playerChoice === 'scissors') {
         return playerChoice;
       }
